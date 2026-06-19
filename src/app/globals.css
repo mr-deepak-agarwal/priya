@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  /* === Dr. Priya Agarwal — Ayurveda — design tokens === */
+  --ivory: #faf8f3;
+  --ivory-deep: #f3efe4;
+  --sand: #e8e2d4;
+  --sand-line: #ddd5c2;
+  --sage: #7c8f6f;
+  --sage-deep: #5a6b52;
+  --moss: #3d4a35;
+  --moss-soft: #4f5e45;
+  --gold: #c9a876;
+  --gold-deep: #b08e57;
+  --white: #ffffff;
+
+  --background: var(--ivory);
+  --foreground: var(--moss);
+}
+
+@theme inline {
+  --color-ivory: var(--ivory);
+  --color-ivory-deep: var(--ivory-deep);
+  --color-sand: var(--sand);
+  --color-sand-line: var(--sand-line);
+  --color-sage: var(--sage);
+  --color-sage-deep: var(--sage-deep);
+  --color-moss: var(--moss);
+  --color-moss-soft: var(--moss-soft);
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Eyebrow / utility label style — small tracked uppercase */
+.eyebrow {
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sage-deep);
+}
+
+/* Respect reduced motion preference globally */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Visible keyboard focus */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--sage);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
