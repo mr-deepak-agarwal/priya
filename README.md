@@ -14,7 +14,17 @@ Next.js (App Router), TypeScript, and Tailwind CSS v4.
   restricted networks.
 - **Signature motif**: a thin "pulse line" SVG divider (`PulseLine.tsx`)
   referencing Nadi Pariksha (pulse diagnosis), used between sections instead
-  of generic decorative waves.
+  of generic decorative waves. It draws itself on scroll, then a single soft
+  point travels the path once — like one heartbeat passing through.
+- **Motion**: sections fade/rise into view on scroll (`Reveal.tsx`), practice
+  cards lift gently on hover, and the "Nadi Pariksha" step in the consultation
+  process has a slow breathing-dot animation. All motion respects
+  `prefers-reduced-motion`.
+- **Botanical graphics**: a hand-built leaf-sprig watermark (`LeafSprig.tsx`,
+  loosely referencing tulsi/neem) sits at very low opacity in section
+  backgrounds, and a slow-rotating mandala-ring motif (`MandalaRing.tsx`)
+  sits behind the hero portrait — both pure line-art SVG, no external
+  image assets.
 
 ## Running locally
 
@@ -73,7 +83,10 @@ src/
   components/
     SiteHeader.tsx       — sticky nav with mobile menu
     SiteFooter.tsx
-    PulseLine.tsx        — signature SVG divider motif
+    PulseLine.tsx        — signature SVG divider motif (draws on scroll)
+    LeafSprig.tsx        — botanical watermark graphic
+    MandalaRing.tsx      — slow-rotating ring motif (hero background)
+    Reveal.tsx           — scroll-triggered fade/rise wrapper
     ConsultationForm.tsx — booking form with validation
 ```
 

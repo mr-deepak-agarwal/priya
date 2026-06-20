@@ -76,3 +76,56 @@ select:focus-visible {
   outline-offset: 3px;
   border-radius: 2px;
 }
+
+/* === Subtle Ayurveda-themed motion utilities === */
+
+/* Very slow continuous rotation — used on the mandala ring motif */
+@keyframes slow-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-slow-spin {
+  animation: slow-spin 90s linear infinite;
+}
+
+/* Gentle breathing pulse — used on the "Nadi Pariksha" pulse-diagnosis dot */
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+.animate-breathe {
+  animation: breathe 2.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Soft outward ripple ring paired with the breathing dot */
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+.animate-ripple {
+  animation: ripple 2.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Card hover lift — used on practice-area and process cards */
+.lift-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.lift-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--sage);
+  box-shadow: 0 16px 32px -16px rgba(61, 74, 53, 0.18);
+}

@@ -2,6 +2,9 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PulseLine from "@/components/PulseLine";
 import ConsultationForm from "@/components/ConsultationForm";
+import Reveal from "@/components/Reveal";
+import LeafSprig from "@/components/LeafSprig";
+import MandalaRing from "@/components/MandalaRing";
 
 const SPECIALTIES = [
   {
@@ -77,8 +80,11 @@ export default function Home() {
       <main id="top" className="flex-1">
         {/* ============ HERO ============ */}
         <section className="relative overflow-hidden px-6 pt-16 pb-10 sm:px-8 sm:pt-24 sm:pb-14">
+          {/* Botanical watermark, top-right corner — very low opacity */}
+          <LeafSprig className="pointer-events-none absolute -top-8 right-0 h-[26rem] w-auto text-sage opacity-[0.07] sm:-top-12 sm:h-[32rem]" />
+
           <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-            <div>
+            <Reveal>
               <p className="eyebrow mb-5">Ayurveda · Jaipur</p>
               <h1 className="font-display text-[2.6rem] leading-[1.08] text-moss sm:text-[3.4rem]">
                 Healing that begins
@@ -107,19 +113,23 @@ export default function Home() {
                   How it works
                 </a>
               </div>
-            </div>
+            </Reveal>
 
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-sm">
-              <div className="absolute inset-0 rounded-[2.5rem] bg-sand" />
-              <div className="absolute inset-3 flex flex-col items-center justify-center gap-3 rounded-[2rem] border border-sand-line bg-ivory-deep text-center">
-                <span className="font-display text-sm tracking-wide text-sage-deep">
-                  Portrait placeholder
-                </span>
-                <span className="max-w-[12rem] text-xs leading-relaxed text-moss-soft/70">
-                  Swap this block for Dr. Priya&apos;s photograph
-                </span>
+            <Reveal delay={150}>
+              <div className="relative mx-auto aspect-[4/5] w-full max-w-sm">
+                {/* Slow-rotating mandala ring, sitting behind the portrait card */}
+                <MandalaRing className="absolute inset-[-12%] h-[124%] w-[124%] text-sage opacity-[0.16] animate-slow-spin" />
+                <div className="absolute inset-0 rounded-[2.5rem] bg-sand" />
+                <div className="absolute inset-3 flex flex-col items-center justify-center gap-3 rounded-[2rem] border border-sand-line bg-ivory-deep text-center">
+                  <span className="font-display text-sm tracking-wide text-sage-deep">
+                    Portrait placeholder
+                  </span>
+                  <span className="max-w-[12rem] text-xs leading-relaxed text-moss-soft/70">
+                    Swap this block for Dr. Priya&apos;s photograph
+                  </span>
+                </div>
               </div>
-            </div>
+            </Reveal>
           </div>
         </section>
 
@@ -128,15 +138,15 @@ export default function Home() {
         {/* ============ ABOUT ============ */}
         <section id="about" className="px-6 py-20 sm:px-8 sm:py-28">
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-            <div>
+            <Reveal>
               <p className="eyebrow mb-4">About Dr. Priya</p>
               <h2 className="font-display text-3xl leading-tight text-moss sm:text-4xl">
                 Trained in the classics.
                 <br />
                 Practiced in the real world.
               </h2>
-            </div>
-            <div className="space-y-5 text-[1.02rem] leading-relaxed text-moss-soft">
+            </Reveal>
+            <Reveal delay={120} className="space-y-5 text-[1.02rem] leading-relaxed text-moss-soft">
               <p>
                 Dr. Priya Agarwal is a BAMS-qualified Ayurveda physician, an
                 alumna of the Government Ayurved Medical &amp; Research
@@ -156,47 +166,48 @@ export default function Home() {
                 practice built on one principle: every treatment plan should
                 be as individual as the person receiving it.
               </p>
-            </div>
+            </Reveal>
           </div>
         </section>
 
         {/* ============ PRACTICE / SPECIALTIES ============ */}
         <section
           id="practice"
-          className="bg-ivory-deep px-6 py-20 sm:px-8 sm:py-28"
+          className="relative overflow-hidden bg-ivory-deep px-6 py-20 sm:px-8 sm:py-28"
         >
+          <LeafSprig className="pointer-events-none absolute -bottom-16 -left-10 h-[24rem] w-auto rotate-[18deg] text-sage opacity-[0.06] sm:h-[30rem]" />
+
           <div className="mx-auto max-w-6xl">
-            <div className="mx-auto max-w-2xl text-center">
+            <Reveal className="mx-auto max-w-2xl text-center">
               <p className="eyebrow mb-4">Areas of Practice</p>
               <h2 className="font-display text-3xl leading-tight text-moss sm:text-4xl">
                 Care tailored to where you are
               </h2>
-            </div>
+            </Reveal>
 
             <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {SPECIALTIES.map((item) => (
-                <div
-                  key={item.title}
-                  className="flex flex-col rounded-2xl border border-sand-line bg-ivory p-7"
-                >
-                  <h3 className="font-display text-xl text-moss">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 flex-1 text-[0.92rem] leading-relaxed text-moss-soft">
-                    {item.description}
-                  </p>
-                  <ul className="mt-5 space-y-2 border-t border-sand-line pt-5">
-                    {item.points.map((point) => (
-                      <li
-                        key={point}
-                        className="flex items-start gap-2.5 text-[0.85rem] text-moss-soft"
-                      >
-                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold-deep" />
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              {SPECIALTIES.map((item, i) => (
+                <Reveal key={item.title} delay={i * 110}>
+                  <div className="lift-card flex h-full flex-col rounded-2xl border border-sand-line bg-ivory p-7">
+                    <h3 className="font-display text-xl text-moss">
+                      {item.title}
+                    </h3>
+                    <p className="mt-3 flex-1 text-[0.92rem] leading-relaxed text-moss-soft">
+                      {item.description}
+                    </p>
+                    <ul className="mt-5 space-y-2 border-t border-sand-line pt-5">
+                      {item.points.map((point) => (
+                        <li
+                          key={point}
+                          className="flex items-start gap-2.5 text-[0.85rem] text-moss-soft"
+                        >
+                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold-deep" />
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -210,28 +221,36 @@ export default function Home() {
         {/* ============ PROCESS ============ */}
         <section id="process" className="px-6 py-20 sm:px-8 sm:py-28">
           <div className="mx-auto max-w-6xl">
-            <div className="mx-auto max-w-2xl text-center">
+            <Reveal className="mx-auto max-w-2xl text-center">
               <p className="eyebrow mb-4">What to Expect</p>
               <h2 className="font-display text-3xl leading-tight text-moss sm:text-4xl">
                 Your consultation, step by step
               </h2>
-            </div>
+            </Reveal>
 
             <div className="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2">
-              {PROCESS.map((item) => (
-                <div key={item.step} className="flex gap-5">
-                  <span className="font-display text-3xl text-sage shrink-0">
-                    {item.step}
-                  </span>
-                  <div>
-                    <h3 className="font-display text-lg text-moss">
-                      {item.title}
-                    </h3>
-                    <p className="mt-2 text-[0.92rem] leading-relaxed text-moss-soft">
-                      {item.description}
-                    </p>
+              {PROCESS.map((item, i) => (
+                <Reveal key={item.step} delay={i * 90}>
+                  <div className="flex gap-5">
+                    <span className="relative font-display text-3xl text-sage shrink-0">
+                      {item.step}
+                      {item.step === "02" && (
+                        <span className="absolute -right-2 top-1 inline-flex h-2.5 w-2.5">
+                          <span className="absolute inline-flex h-full w-full rounded-full bg-gold-deep animate-ripple" />
+                          <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-gold-deep animate-breathe" />
+                        </span>
+                      )}
+                    </span>
+                    <div>
+                      <h3 className="font-display text-lg text-moss">
+                        {item.title}
+                      </h3>
+                      <p className="mt-2 text-[0.92rem] leading-relaxed text-moss-soft">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -239,7 +258,7 @@ export default function Home() {
 
         {/* ============ CREDENTIALS ============ */}
         <section className="bg-ivory-deep px-6 py-16 sm:px-8 sm:py-20">
-          <div className="mx-auto max-w-6xl">
+          <Reveal className="mx-auto max-w-6xl">
             <p className="eyebrow mb-6 text-center">
               Education &amp; Experience
             </p>
@@ -253,13 +272,15 @@ export default function Home() {
                 </span>
               ))}
             </div>
-          </div>
+          </Reveal>
         </section>
 
         {/* ============ CONTACT ============ */}
-        <section id="contact" className="px-6 py-20 sm:px-8 sm:py-28">
+        <section id="contact" className="relative overflow-hidden px-6 py-20 sm:px-8 sm:py-28">
+          <LeafSprig className="pointer-events-none absolute -top-10 right-[-4rem] h-[22rem] w-auto -rotate-12 text-sage opacity-[0.06] sm:h-[28rem]" />
+
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
-            <div>
+            <Reveal>
               <p className="eyebrow mb-4">Book a Visit</p>
               <h2 className="font-display text-3xl leading-tight text-moss sm:text-4xl">
                 Start with a conversation.
@@ -280,11 +301,13 @@ export default function Home() {
                   Mon–Sat · 10:00am – 6:00pm
                 </p>
               </div>
-            </div>
+            </Reveal>
 
-            <div className="rounded-3xl border border-sand-line bg-ivory-deep p-7 sm:p-10">
-              <ConsultationForm />
-            </div>
+            <Reveal delay={140}>
+              <div className="rounded-3xl border border-sand-line bg-ivory-deep p-7 sm:p-10">
+                <ConsultationForm />
+              </div>
+            </Reveal>
           </div>
         </section>
       </main>

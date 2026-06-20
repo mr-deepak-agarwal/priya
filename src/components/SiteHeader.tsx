@@ -30,9 +30,10 @@ export default function SiteHeader() {
             <a
               key={link.href}
               href={link.href}
-              className="text-[0.9rem] font-medium text-moss-soft transition hover:text-moss"
+              className="group relative text-[0.9rem] font-medium text-moss-soft transition hover:text-moss"
             >
               {link.label}
+              <span className="absolute -bottom-1 left-0 h-px w-0 bg-sage transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
           <a
