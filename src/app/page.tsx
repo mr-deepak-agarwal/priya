@@ -1,13 +1,12 @@
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import PulseLine from "@/components/PulseLine";
+import SectionDivider from "@/components/SectionDivider";
 import ConsultationForm from "@/components/ConsultationForm";
 import Reveal from "@/components/Reveal";
 import LeafSprig from "@/components/LeafSprig";
 import MandalaRing from "@/components/MandalaRing";
 import AnimatedHeadline from "@/components/AnimatedHeadline";
 import CursorParallax from "@/components/CursorParallax";
-import LivePulseTrace from "@/components/LivePulseTrace";
 import PracticeCard from "@/components/PracticeCard";
 import CountUp from "@/components/CountUp";
 
@@ -120,9 +119,6 @@ export default function Home() {
                     How it works
                   </a>
                 </div>
-
-                {/* Live pulse trace — runs continuously, the "this page is alive" signal */}
-                <LivePulseTrace className="mt-10 h-12 w-full max-w-sm text-sage" />
               </Reveal>
             </div>
 
@@ -144,7 +140,7 @@ export default function Home() {
           </div>
         </section>
 
-        <PulseLine className="mx-auto block h-10 w-full max-w-6xl px-6" />
+        <SectionDivider className="mx-auto max-w-6xl px-6 py-2" />
 
         {/* ============ ABOUT ============ */}
         <section id="about" className="px-6 py-20 sm:px-8 sm:py-28">
@@ -211,10 +207,7 @@ export default function Home() {
           </div>
         </section>
 
-        <PulseLine
-          className="mx-auto block h-10 w-full max-w-6xl px-6"
-          flip
-        />
+        <SectionDivider className="mx-auto max-w-6xl px-6 py-2" />
 
         {/* ============ PROCESS ============ */}
         <section id="process" className="px-6 py-20 sm:px-8 sm:py-28">

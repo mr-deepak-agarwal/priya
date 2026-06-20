@@ -122,7 +122,7 @@ export default function ConsultationForm() {
                 name="concern"
                 value={concern}
                 defaultChecked={concern === CONCERNS[0]}
-                className="h-3.5 w-3.5 accent-[#5a6b52]"
+                className="h-3.5 w-3.5 accent-[#2f6b48]"
               />
               {concern}
             </label>
