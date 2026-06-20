@@ -129,3 +129,16 @@ select:focus-visible {
   border-color: var(--sage);
   box-shadow: 0 16px 32px -16px rgba(61, 74, 53, 0.18);
 }
+
+/* Continuous left-to-right sweep for the hero's live pulse trace */
+@keyframes pulse-sweep {
+  from {
+    stroke-dashoffset: 460;
+  }
+  to {
+    stroke-dashoffset: -460;
+  }
+}
+.pulse-trace-sweep {
+  animation: pulse-sweep 3.2s linear infinite;
+}

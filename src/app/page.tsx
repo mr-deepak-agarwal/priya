@@ -5,9 +5,15 @@ import ConsultationForm from "@/components/ConsultationForm";
 import Reveal from "@/components/Reveal";
 import LeafSprig from "@/components/LeafSprig";
 import MandalaRing from "@/components/MandalaRing";
+import AnimatedHeadline from "@/components/AnimatedHeadline";
+import CursorParallax from "@/components/CursorParallax";
+import LivePulseTrace from "@/components/LivePulseTrace";
+import PracticeCard from "@/components/PracticeCard";
+import CountUp from "@/components/CountUp";
 
 const SPECIALTIES = [
   {
+    icon: "leaf" as const,
     title: "General Ayurveda Consultation",
     description:
       "Whole-person assessment rooted in classical diagnosis — pulse, prakriti, and lifestyle — to address the root cause, not just the symptom.",
@@ -18,6 +24,7 @@ const SPECIALTIES = [
     ],
   },
   {
+    icon: "drop" as const,
     title: "Panchakarma & Detoxification",
     description:
       "Structured cleansing protocols to clear accumulated toxins and reset digestion, immunity, and energy — guided and monitored throughout.",
@@ -28,6 +35,7 @@ const SPECIALTIES = [
     ],
   },
   {
+    icon: "lotus" as const,
     title: "Women's Health & Fertility",
     description:
       "Sensitive, evidence-informed care for menstrual health, hormonal balance, and fertility — combining classical therapies with modern understanding.",
@@ -84,39 +92,42 @@ export default function Home() {
           <LeafSprig className="pointer-events-none absolute -top-8 right-0 h-[26rem] w-auto text-sage opacity-[0.07] sm:-top-12 sm:h-[32rem]" />
 
           <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-            <Reveal>
-              <p className="eyebrow mb-5">Ayurveda · Jaipur</p>
-              <h1 className="font-display text-[2.6rem] leading-[1.08] text-moss sm:text-[3.4rem]">
-                Healing that begins
-                <br />
-                with <em className="italic text-sage-deep">listening</em> —
-                <br />
-                not prescribing.
-              </h1>
-              <p className="mt-6 max-w-md text-[1.05rem] leading-relaxed text-moss-soft">
-                Dr. Priya Agarwal offers personal Ayurveda consultations
-                grounded in classical diagnosis — for everyday wellness,
-                Panchakarma detox, and women&apos;s health — right here in
-                Jaipur.
-              </p>
-              <div className="mt-8 flex flex-wrap items-center gap-4">
-                <a
-                  href="#contact"
-                  className="rounded-full bg-moss px-7 py-3.5 text-sm font-medium tracking-wide text-ivory transition hover:bg-sage-deep"
-                >
-                  Book a Consultation
-                </a>
-                <a
-                  href="#process"
-                  className="text-sm font-medium text-sage-deep underline decoration-sand-line decoration-2 underline-offset-4 transition hover:text-moss"
-                >
-                  How it works
-                </a>
-              </div>
-            </Reveal>
+            <div>
+              <Reveal>
+                <p className="eyebrow mb-5">Ayurveda · Jaipur</p>
+              </Reveal>
+
+              <AnimatedHeadline />
+
+              <Reveal delay={500}>
+                <p className="mt-6 max-w-md text-[1.05rem] leading-relaxed text-moss-soft">
+                  Dr. Priya Agarwal offers personal Ayurveda consultations
+                  grounded in classical diagnosis — for everyday wellness,
+                  Panchakarma detox, and women&apos;s health — right here in
+                  Jaipur.
+                </p>
+                <div className="mt-8 flex flex-wrap items-center gap-4">
+                  <a
+                    href="#contact"
+                    className="rounded-full bg-moss px-7 py-3.5 text-sm font-medium tracking-wide text-ivory transition hover:scale-[1.03] hover:bg-sage-deep"
+                  >
+                    Book a Consultation
+                  </a>
+                  <a
+                    href="#process"
+                    className="text-sm font-medium text-sage-deep underline decoration-sand-line decoration-2 underline-offset-4 transition hover:text-moss"
+                  >
+                    How it works
+                  </a>
+                </div>
+
+                {/* Live pulse trace — runs continuously, the "this page is alive" signal */}
+                <LivePulseTrace className="mt-10 h-12 w-full max-w-sm text-sage" />
+              </Reveal>
+            </div>
 
             <Reveal delay={150}>
-              <div className="relative mx-auto aspect-[4/5] w-full max-w-sm">
+              <CursorParallax className="relative mx-auto aspect-[4/5] w-full max-w-sm">
                 {/* Slow-rotating mandala ring, sitting behind the portrait card */}
                 <MandalaRing className="absolute inset-[-12%] h-[124%] w-[124%] text-sage opacity-[0.16] animate-slow-spin" />
                 <div className="absolute inset-0 rounded-[2.5rem] bg-sand" />
@@ -128,7 +139,7 @@ export default function Home() {
                     Swap this block for Dr. Priya&apos;s photograph
                   </span>
                 </div>
-              </div>
+              </CursorParallax>
             </Reveal>
           </div>
         </section>
@@ -188,25 +199,12 @@ export default function Home() {
             <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {SPECIALTIES.map((item, i) => (
                 <Reveal key={item.title} delay={i * 110}>
-                  <div className="lift-card flex h-full flex-col rounded-2xl border border-sand-line bg-ivory p-7">
-                    <h3 className="font-display text-xl text-moss">
-                      {item.title}
-                    </h3>
-                    <p className="mt-3 flex-1 text-[0.92rem] leading-relaxed text-moss-soft">
-                      {item.description}
-                    </p>
-                    <ul className="mt-5 space-y-2 border-t border-sand-line pt-5">
-                      {item.points.map((point) => (
-                        <li
-                          key={point}
-                          className="flex items-start gap-2.5 text-[0.85rem] text-moss-soft"
-                        >
-                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold-deep" />
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <PracticeCard
+                    icon={item.icon}
+                    title={item.title}
+                    description={item.description}
+                    points={item.points}
+                  />
                 </Reveal>
               ))}
             </div>
@@ -235,9 +233,9 @@ export default function Home() {
                     <span className="relative font-display text-3xl text-sage shrink-0">
                       {item.step}
                       {item.step === "02" && (
-                        <span className="absolute -right-2 top-1 inline-flex h-2.5 w-2.5">
+                        <span className="absolute -right-3 top-1.5 inline-flex h-3.5 w-3.5">
                           <span className="absolute inline-flex h-full w-full rounded-full bg-gold-deep animate-ripple" />
-                          <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-gold-deep animate-breathe" />
+                          <span className="relative inline-flex h-3.5 w-3.5 rounded-full bg-gold-deep animate-breathe" />
                         </span>
                       )}
                     </span>
@@ -259,6 +257,27 @@ export default function Home() {
         {/* ============ CREDENTIALS ============ */}
         <section className="bg-ivory-deep px-6 py-16 sm:px-8 sm:py-20">
           <Reveal className="mx-auto max-w-6xl">
+            <div className="mb-10 grid grid-cols-3 gap-6 border-b border-sand-line pb-10 sm:max-w-xl sm:mx-auto">
+              <div className="text-center">
+                <p className="font-display text-3xl text-sage-deep sm:text-4xl">
+                  <CountUp to={3} suffix="+" />
+                </p>
+                <p className="mt-1 text-xs text-moss-soft">Areas of Care</p>
+              </div>
+              <div className="text-center">
+                <p className="font-display text-3xl text-sage-deep sm:text-4xl">
+                  <CountUp to={2} />
+                </p>
+                <p className="mt-1 text-xs text-moss-soft">Clinics Trained At</p>
+              </div>
+              <div className="text-center">
+                <p className="font-display text-3xl text-sage-deep sm:text-4xl">
+                  <CountUp to={1} />
+                </p>
+                <p className="mt-1 text-xs text-moss-soft">BAMS Degree</p>
+              </div>
+            </div>
+
             <p className="eyebrow mb-6 text-center">
               Education &amp; Experience
             </p>

@@ -16,10 +16,14 @@ Next.js (App Router), TypeScript, and Tailwind CSS v4.
   referencing Nadi Pariksha (pulse diagnosis), used between sections instead
   of generic decorative waves. It draws itself on scroll, then a single soft
   point travels the path once — like one heartbeat passing through.
-- **Motion**: sections fade/rise into view on scroll (`Reveal.tsx`), practice
-  cards lift gently on hover, and the "Nadi Pariksha" step in the consultation
-  process has a slow breathing-dot animation. All motion respects
-  `prefers-reduced-motion`.
+- **Motion**: sections fade/rise into view on scroll (`Reveal.tsx`), the hero
+  headline animates in word-by-word on load (`AnimatedHeadline.tsx`), the
+  hero visual tilts toward the cursor (`CursorParallax.tsx`), a continuous
+  EKG-style trace runs in the hero (`LivePulseTrace.tsx`), practice cards
+  draw in a line-art icon on hover (`PracticeIcons.tsx` / `PracticeCard.tsx`),
+  credentials count up on scroll (`CountUp.tsx`), and the "Nadi Pariksha"
+  step has a breathing-dot pulse. Built with Framer Motion + native CSS/SVG
+  animation. All motion respects `prefers-reduced-motion`.
 - **Botanical graphics**: a hand-built leaf-sprig watermark (`LeafSprig.tsx`,
   loosely referencing tulsi/neem) sits at very low opacity in section
   backgrounds, and a slow-rotating mandala-ring motif (`MandalaRing.tsx`)
@@ -84,9 +88,15 @@ src/
     SiteHeader.tsx       — sticky nav with mobile menu
     SiteFooter.tsx
     PulseLine.tsx        — signature SVG divider motif (draws on scroll)
+    LivePulseTrace.tsx   — continuous EKG trace, hero "alive" signal
     LeafSprig.tsx        — botanical watermark graphic
     MandalaRing.tsx      — slow-rotating ring motif (hero background)
     Reveal.tsx           — scroll-triggered fade/rise wrapper
+    AnimatedHeadline.tsx — word-by-word hero headline entrance
+    CursorParallax.tsx   — cursor-reactive tilt wrapper for hero visual
+    PracticeCard.tsx     — practice card with hover icon animation
+    PracticeIcons.tsx    — line-draw SVG icons (leaf/drop/lotus)
+    CountUp.tsx          — animated count-up numbers
     ConsultationForm.tsx — booking form with validation
 ```
 
