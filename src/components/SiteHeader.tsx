@@ -19,7 +19,7 @@ export default function SiteHeader() {
           <LogoMark />
           <span className="font-display text-[1.05rem] leading-tight text-charcoal">
             Dr. Priya Agarwal
-            <span className="block text-[0.6rem] font-sans font-medium tracking-[0.18em] text-clay-deep uppercase">
+            <span className="block text-[0.6rem] font-sans font-medium tracking-[0.18em] text-sage-deep uppercase">
               Ayurveda · BAMS
             </span>
           </span>
@@ -33,12 +33,12 @@ export default function SiteHeader() {
               className="group relative text-[0.9rem] font-medium text-charcoal-soft transition hover:text-charcoal"
             >
               {link.label}
-              <span className="absolute -bottom-1 left-0 h-px w-0 bg-clay transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 h-px w-0 bg-sage transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
           <a
             href="#contact"
-            className="rounded-full bg-clay px-5 py-2.5 text-[0.85rem] font-medium tracking-wide text-ivory transition hover:bg-clay-deep"
+            className="rounded-full bg-sage px-5 py-2.5 text-[0.85rem] font-medium tracking-wide text-ivory transition hover:bg-sage-deep"
           >
             Book a Visit
           </a>
@@ -87,7 +87,7 @@ export default function SiteHeader() {
 function LogoMark() {
   return (
     <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-      <circle cx="17" cy="17" r="16" stroke="var(--clay)" strokeWidth="1.2" />
+      <circle cx="17" cy="17" r="16" stroke="var(--sage)" strokeWidth="1.2" />
       <path
         d="M9 18c2-7 6-10 8-10s6 3 8 10c-2 5-5 7-8 7s-6-2-8-7Z"
         stroke="var(--gold-deep)"

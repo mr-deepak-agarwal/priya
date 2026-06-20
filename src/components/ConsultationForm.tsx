@@ -115,14 +115,14 @@ export default function ConsultationForm() {
           {CONCERNS.map((concern) => (
             <label
               key={concern}
-              className="flex cursor-pointer items-center gap-2.5 rounded-xl border border-sand-line bg-white/60 px-3.5 py-2.5 text-[0.9rem] text-charcoal-soft transition hover:border-clay has-[:checked]:border-clay has-[:checked]:bg-clay/10 has-[:checked]:text-charcoal"
+              className="flex cursor-pointer items-center gap-2.5 rounded-xl border border-sand-line bg-white/60 px-3.5 py-2.5 text-[0.9rem] text-charcoal-soft transition hover:border-sage has-[:checked]:border-sage has-[:checked]:bg-sage/10 has-[:checked]:text-charcoal"
             >
               <input
                 type="radio"
                 name="concern"
                 value={concern}
                 defaultChecked={concern === CONCERNS[0]}
-                className="h-3.5 w-3.5 accent-[#8c3f22]"
+                className="h-3.5 w-3.5 accent-[#1c4a2d]"
               />
               {concern}
             </label>
@@ -146,7 +146,7 @@ export default function ConsultationForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-clay px-7 py-3.5 text-sm font-medium tracking-wide text-ivory shadow-[0_10px_24px_-10px_rgba(140,63,34,0.55)] transition hover:bg-clay-deep disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+        className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-sage px-7 py-3.5 text-sm font-medium tracking-wide text-ivory shadow-[0_10px_24px_-10px_rgba(28,74,45,0.5)] transition hover:bg-sage-deep disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
       >
         {status === "submitting"
           ? "Sending request…"
@@ -191,6 +191,6 @@ function inputClasses(hasError: boolean) {
   return [
     "w-full rounded-xl border bg-white/60 px-4 py-2.75 text-[0.95rem] text-charcoal placeholder:text-charcoal-soft/50",
     "transition focus:bg-white focus:outline-none",
-    hasError ? "border-[#c98a73]" : "border-sand-line focus:border-clay",
+    hasError ? "border-[#c98a73]" : "border-sand-line focus:border-sage",
   ].join(" ");
 }

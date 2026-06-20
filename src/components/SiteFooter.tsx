@@ -34,7 +34,7 @@ export default function SiteFooter() {
             </p>
             <a
               href="#contact"
-              className="mt-3 inline-block text-sm font-medium text-clay-deep underline decoration-sand-line decoration-2 underline-offset-4 transition hover:text-charcoal"
+              className="mt-3 inline-block text-sm font-medium text-sage-deep underline decoration-sand-line decoration-2 underline-offset-4 transition hover:text-charcoal"
             >
               Request a consultation →
             </a>
