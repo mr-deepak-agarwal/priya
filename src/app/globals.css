@@ -1,21 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  /* === Dr. Priya Agarwal — Ayurveda — design tokens === */
-  --ivory: #faf8f3;
-  --ivory-deep: #f1ece0;
-  --sand: #e4dcc8;
-  --sand-line: #d6cbae;
-  --sage: #5e9272;
-  --sage-deep: #2f6b48;
-  --moss: #16301f;
-  --moss-soft: #2c4a31;
+  /* === Dr. Priya Agarwal — Ayurveda — design tokens ===
+     Primary identity is turmeric clay (terracotta) + warm charcoal text.
+     Green is now a deliberate minor accent — used only on botanical
+     icon marks, the logo dot, and focus states — instead of carrying
+     every heading and link as it did before. */
+  --ivory: #fbf7ef;
+  --ivory-deep: #f2e8d6;
+  --sand: #e8d8bb;
+  --sand-line: #d8c298;
+  --clay: #b5552e;
+  --clay-deep: #8c3f22;
+  --charcoal: #2a2117;
+  --charcoal-soft: #5b4d3d;
+  --sage: #4f7a52;
+  --sage-deep: #34592f;
   --gold: #c9a876;
   --gold-deep: #a8824c;
   --white: #ffffff;
 
+  /* legacy aliases kept so existing markup (moss/moss-soft) still resolves
+     to the new charcoal tones without a full find-and-replace pass */
+  --moss: var(--charcoal);
+  --moss-soft: var(--charcoal-soft);
+
   --background: var(--ivory);
-  --foreground: var(--moss);
+  --foreground: var(--charcoal);
 }
 
 @theme inline {
@@ -23,6 +34,10 @@
   --color-ivory-deep: var(--ivory-deep);
   --color-sand: var(--sand);
   --color-sand-line: var(--sand-line);
+  --color-clay: var(--clay);
+  --color-clay-deep: var(--clay-deep);
+  --color-charcoal: var(--charcoal);
+  --color-charcoal-soft: var(--charcoal-soft);
   --color-sage: var(--sage);
   --color-sage-deep: var(--sage-deep);
   --color-moss: var(--moss);
@@ -41,9 +56,32 @@ html {
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(ellipse 70% 45% at 18% -8%, rgba(181, 85, 46, 0.07), transparent 60%),
+    radial-gradient(ellipse 55% 40% at 100% 8%, rgba(201, 168, 118, 0.10), transparent 60%),
+    radial-gradient(ellipse 60% 35% at 85% 100%, rgba(79, 122, 82, 0.045), transparent 60%),
+    var(--background);
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  position: relative;
+}
+
+/* Fine grain texture so flat colour fields read as paper, not a CSS gradient */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+#top {
+  position: relative;
+  z-index: 1;
 }
 
 /* Eyebrow / utility label style — small tracked uppercase */
@@ -53,7 +91,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--sage-deep);
+  color: var(--clay-deep);
 }
 
 /* Respect reduced motion preference globally */
@@ -126,8 +164,8 @@ select:focus-visible {
 }
 .lift-card:hover {
   transform: translateY(-5px);
-  border-color: var(--sage);
-  box-shadow: 0 16px 32px -16px rgba(61, 74, 53, 0.18);
+  border-color: var(--clay);
+  box-shadow: 0 18px 36px -16px rgba(42, 33, 23, 0.22);
 }
 
 /* Slow, gentle line-draw used by the botanical section divider */

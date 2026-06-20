@@ -39,7 +39,7 @@ export default function AnimatedHeadline() {
       initial="hidden"
       animate="show"
       variants={container}
-      className="font-display text-[2.6rem] leading-[1.08] text-moss sm:text-[3.4rem]"
+      className="font-display text-[2.6rem] leading-[1.08] text-charcoal sm:text-[3.4rem]"
     >
       {lines.map((line, li) => (
         <span key={li} className="block">
@@ -47,7 +47,7 @@ export default function AnimatedHeadline() {
             <motion.span
               key={wi}
               variants={word}
-              className={`inline-block ${w.italic ? "italic text-sage-deep" : ""}`}
+              className={`inline-block ${w.italic ? "italic text-clay-deep" : ""}`}
               style={{ marginRight: "0.28em" }}
             >
               {w.text}

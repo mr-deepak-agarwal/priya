@@ -88,7 +88,7 @@ export default function Home() {
         {/* ============ HERO ============ */}
         <section className="relative overflow-hidden px-6 pt-16 pb-10 sm:px-8 sm:pt-24 sm:pb-14">
           {/* Botanical watermark, top-right corner — very low opacity */}
-          <LeafSprig className="pointer-events-none absolute -top-8 right-0 h-[26rem] w-auto text-sage opacity-[0.07] sm:-top-12 sm:h-[32rem]" />
+          <LeafSprig className="pointer-events-none absolute -top-8 right-0 h-[26rem] w-auto text-clay opacity-[0.05] sm:-top-12 sm:h-[32rem]" />
 
           <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
@@ -99,7 +99,7 @@ export default function Home() {
               <AnimatedHeadline />
 
               <Reveal delay={500}>
-                <p className="mt-6 max-w-md text-[1.05rem] leading-relaxed text-moss-soft">
+                <p className="mt-6 max-w-md text-[1.05rem] leading-relaxed text-charcoal-soft">
                   Dr. Priya Agarwal offers personal Ayurveda consultations
                   grounded in classical diagnosis — for everyday wellness,
                   Panchakarma detox, and women&apos;s health — right here in
@@ -108,13 +108,13 @@ export default function Home() {
                 <div className="mt-8 flex flex-wrap items-center gap-4">
                   <a
                     href="#contact"
-                    className="rounded-full bg-moss px-7 py-3.5 text-sm font-medium tracking-wide text-ivory transition hover:scale-[1.03] hover:bg-sage-deep"
+                    className="rounded-full bg-clay px-7 py-3.5 text-sm font-medium tracking-wide text-ivory shadow-[0_10px_24px_-10px_rgba(140,63,34,0.55)] transition hover:scale-[1.03] hover:bg-clay-deep"
                   >
                     Book a Consultation
                   </a>
                   <a
                     href="#process"
-                    className="text-sm font-medium text-sage-deep underline decoration-sand-line decoration-2 underline-offset-4 transition hover:text-moss"
+                    className="text-sm font-medium text-clay-deep underline decoration-sand-line decoration-2 underline-offset-4 transition hover:text-charcoal"
                   >
                     How it works
                   </a>
@@ -125,13 +125,13 @@ export default function Home() {
             <Reveal delay={150}>
               <CursorParallax className="relative mx-auto aspect-[4/5] w-full max-w-sm">
                 {/* Slow-rotating mandala ring, sitting behind the portrait card */}
-                <MandalaRing className="absolute inset-[-12%] h-[124%] w-[124%] text-sage opacity-[0.16] animate-slow-spin" />
-                <div className="absolute inset-0 rounded-[2.5rem] bg-sand" />
+                <MandalaRing className="absolute inset-[-12%] h-[124%] w-[124%] text-clay opacity-[0.14] animate-slow-spin" />
+                <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-sand via-sand to-gold/30 shadow-[0_24px_48px_-20px_rgba(42,33,23,0.35)]" />
                 <div className="absolute inset-3 flex flex-col items-center justify-center gap-3 rounded-[2rem] border border-sand-line bg-ivory-deep text-center">
-                  <span className="font-display text-sm tracking-wide text-sage-deep">
+                  <span className="font-display text-sm tracking-wide text-clay-deep">
                     Portrait placeholder
                   </span>
-                  <span className="max-w-[12rem] text-xs leading-relaxed text-moss-soft/70">
+                  <span className="max-w-[12rem] text-xs leading-relaxed text-charcoal-soft/70">
                     Swap this block for Dr. Priya&apos;s photograph
                   </span>
                 </div>
@@ -147,13 +147,13 @@ export default function Home() {
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             <Reveal>
               <p className="eyebrow mb-4">About Dr. Priya</p>
-              <h2 className="font-display text-3xl leading-tight text-moss sm:text-4xl">
+              <h2 className="font-display text-3xl leading-tight text-charcoal sm:text-4xl">
                 Trained in the classics.
                 <br />
                 Practiced in the real world.
               </h2>
             </Reveal>
-            <Reveal delay={120} className="space-y-5 text-[1.02rem] leading-relaxed text-moss-soft">
+            <Reveal delay={120} className="space-y-5 text-[1.02rem] leading-relaxed text-charcoal-soft">
               <p>
                 Dr. Priya Agarwal is a BAMS-qualified Ayurveda physician, an
                 alumna of the Government Ayurved Medical &amp; Research
@@ -182,12 +182,12 @@ export default function Home() {
           id="practice"
           className="relative overflow-hidden bg-ivory-deep px-6 py-20 sm:px-8 sm:py-28"
         >
-          <LeafSprig className="pointer-events-none absolute -bottom-16 -left-10 h-[24rem] w-auto rotate-[18deg] text-sage opacity-[0.06] sm:h-[30rem]" />
+          <LeafSprig className="pointer-events-none absolute -bottom-16 -left-10 h-[24rem] w-auto rotate-[18deg] text-clay opacity-[0.05] sm:h-[30rem]" />
 
           <div className="mx-auto max-w-6xl">
             <Reveal className="mx-auto max-w-2xl text-center">
               <p className="eyebrow mb-4">Areas of Practice</p>
-              <h2 className="font-display text-3xl leading-tight text-moss sm:text-4xl">
+              <h2 className="font-display text-3xl leading-tight text-charcoal sm:text-4xl">
                 Care tailored to where you are
               </h2>
             </Reveal>
@@ -214,7 +214,7 @@ export default function Home() {
           <div className="mx-auto max-w-6xl">
             <Reveal className="mx-auto max-w-2xl text-center">
               <p className="eyebrow mb-4">What to Expect</p>
-              <h2 className="font-display text-3xl leading-tight text-moss sm:text-4xl">
+              <h2 className="font-display text-3xl leading-tight text-charcoal sm:text-4xl">
                 Your consultation, step by step
               </h2>
             </Reveal>
@@ -223,7 +223,7 @@ export default function Home() {
               {PROCESS.map((item, i) => (
                 <Reveal key={item.step} delay={i * 90}>
                   <div className="flex gap-5">
-                    <span className="relative font-display text-3xl text-sage shrink-0">
+                    <span className="relative font-display text-3xl text-clay shrink-0">
                       {item.step}
                       {item.step === "02" && (
                         <span className="absolute -right-3 top-1.5 inline-flex h-3.5 w-3.5">
@@ -233,10 +233,10 @@ export default function Home() {
                       )}
                     </span>
                     <div>
-                      <h3 className="font-display text-lg text-moss">
+                      <h3 className="font-display text-lg text-charcoal">
                         {item.title}
                       </h3>
-                      <p className="mt-2 text-[0.92rem] leading-relaxed text-moss-soft">
+                      <p className="mt-2 text-[0.92rem] leading-relaxed text-charcoal-soft">
                         {item.description}
                       </p>
                     </div>
@@ -252,22 +252,22 @@ export default function Home() {
           <Reveal className="mx-auto max-w-6xl">
             <div className="mb-10 grid grid-cols-3 gap-6 border-b border-sand-line pb-10 sm:max-w-xl sm:mx-auto">
               <div className="text-center">
-                <p className="font-display text-3xl text-sage-deep sm:text-4xl">
+                <p className="font-display text-3xl text-clay-deep sm:text-4xl">
                   <CountUp to={3} suffix="+" />
                 </p>
-                <p className="mt-1 text-xs text-moss-soft">Areas of Care</p>
+                <p className="mt-1 text-xs text-charcoal-soft">Areas of Care</p>
               </div>
               <div className="text-center">
-                <p className="font-display text-3xl text-sage-deep sm:text-4xl">
+                <p className="font-display text-3xl text-clay-deep sm:text-4xl">
                   <CountUp to={2} />
                 </p>
-                <p className="mt-1 text-xs text-moss-soft">Clinics Trained At</p>
+                <p className="mt-1 text-xs text-charcoal-soft">Clinics Trained At</p>
               </div>
               <div className="text-center">
-                <p className="font-display text-3xl text-sage-deep sm:text-4xl">
+                <p className="font-display text-3xl text-clay-deep sm:text-4xl">
                   <CountUp to={1} />
                 </p>
-                <p className="mt-1 text-xs text-moss-soft">BAMS Degree</p>
+                <p className="mt-1 text-xs text-charcoal-soft">BAMS Degree</p>
               </div>
             </div>
 
@@ -278,7 +278,7 @@ export default function Home() {
               {CREDENTIALS.map((credential) => (
                 <span
                   key={credential}
-                  className="text-sm font-medium text-moss-soft"
+                  className="text-sm font-medium text-charcoal-soft"
                 >
                   {credential}
                 </span>
@@ -289,27 +289,27 @@ export default function Home() {
 
         {/* ============ CONTACT ============ */}
         <section id="contact" className="relative overflow-hidden px-6 py-20 sm:px-8 sm:py-28">
-          <LeafSprig className="pointer-events-none absolute -top-10 right-[-4rem] h-[22rem] w-auto -rotate-12 text-sage opacity-[0.06] sm:h-[28rem]" />
+          <LeafSprig className="pointer-events-none absolute -top-10 right-[-4rem] h-[22rem] w-auto -rotate-12 text-clay opacity-[0.05] sm:h-[28rem]" />
 
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
             <Reveal>
               <p className="eyebrow mb-4">Book a Visit</p>
-              <h2 className="font-display text-3xl leading-tight text-moss sm:text-4xl">
+              <h2 className="font-display text-3xl leading-tight text-charcoal sm:text-4xl">
                 Start with a conversation.
               </h2>
-              <p className="mt-5 max-w-sm text-[0.98rem] leading-relaxed text-moss-soft">
+              <p className="mt-5 max-w-sm text-[0.98rem] leading-relaxed text-charcoal-soft">
                 Tell us a little about what you&apos;re looking for, and Dr.
                 Priya&apos;s team will reach out to confirm a time that works
                 for you.
               </p>
 
-              <div className="mt-8 space-y-4 text-sm text-moss-soft">
+              <div className="mt-8 space-y-4 text-sm text-charcoal-soft">
                 <p className="flex items-center gap-2.5">
-                  <span className="h-1.5 w-1.5 rounded-full bg-sage" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-clay" />
                   Jaipur, Rajasthan, India
                 </p>
                 <p className="flex items-center gap-2.5">
-                  <span className="h-1.5 w-1.5 rounded-full bg-sage" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-clay" />
                   Mon–Sat · 10:00am – 6:00pm
                 </p>
               </div>

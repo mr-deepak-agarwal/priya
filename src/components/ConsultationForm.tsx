@@ -53,17 +53,17 @@ export default function ConsultationForm() {
         className="rounded-2xl border border-sand-line bg-ivory-deep px-7 py-9 text-center sm:px-10 sm:py-12"
       >
         <p className="eyebrow mb-3">Request received</p>
-        <h3 className="font-display text-2xl text-moss sm:text-[1.75rem]">
+        <h3 className="font-display text-2xl text-charcoal sm:text-[1.75rem]">
           Thank you — we&apos;ll be in touch soon.
         </h3>
-        <p className="mx-auto mt-3 max-w-sm text-[0.95rem] leading-relaxed text-moss-soft">
+        <p className="mx-auto mt-3 max-w-sm text-[0.95rem] leading-relaxed text-charcoal-soft">
           Dr. Priya&apos;s clinic team typically responds within one business
           day to confirm your appointment time.
         </p>
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="mt-6 text-sm font-medium text-sage-deep underline decoration-sand-line decoration-2 underline-offset-4 transition hover:text-moss"
+          className="mt-6 text-sm font-medium text-sage-deep underline decoration-sand-line decoration-2 underline-offset-4 transition hover:text-charcoal"
         >
           Send another request
         </button>
@@ -108,21 +108,21 @@ export default function ConsultationForm() {
       </Field>
 
       <fieldset>
-        <legend className="mb-2 block text-sm font-medium text-moss">
+        <legend className="mb-2 block text-sm font-medium text-charcoal">
           What would you like to consult about?
         </legend>
         <div className="grid gap-2 sm:grid-cols-2">
           {CONCERNS.map((concern) => (
             <label
               key={concern}
-              className="flex cursor-pointer items-center gap-2.5 rounded-xl border border-sand-line bg-white/60 px-3.5 py-2.5 text-[0.9rem] text-moss-soft transition hover:border-sage has-[:checked]:border-sage has-[:checked]:bg-sage/10 has-[:checked]:text-moss"
+              className="flex cursor-pointer items-center gap-2.5 rounded-xl border border-sand-line bg-white/60 px-3.5 py-2.5 text-[0.9rem] text-charcoal-soft transition hover:border-clay has-[:checked]:border-clay has-[:checked]:bg-clay/10 has-[:checked]:text-charcoal"
             >
               <input
                 type="radio"
                 name="concern"
                 value={concern}
                 defaultChecked={concern === CONCERNS[0]}
-                className="h-3.5 w-3.5 accent-[#2f6b48]"
+                className="h-3.5 w-3.5 accent-[#8c3f22]"
               />
               {concern}
             </label>
@@ -146,13 +146,13 @@ export default function ConsultationForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-moss px-7 py-3.5 text-sm font-medium tracking-wide text-ivory transition hover:bg-sage-deep disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+        className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-clay px-7 py-3.5 text-sm font-medium tracking-wide text-ivory shadow-[0_10px_24px_-10px_rgba(140,63,34,0.55)] transition hover:bg-clay-deep disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
       >
         {status === "submitting"
           ? "Sending request…"
           : "Request a consultation"}
       </button>
-      <p className="text-xs text-moss-soft/80">
+      <p className="text-xs text-charcoal-soft/80">
         We typically respond within one business day. For anything urgent,
         please call the clinic directly.
       </p>
@@ -175,7 +175,7 @@ function Field({
     <div>
       <label
         htmlFor={htmlFor}
-        className="mb-1.5 block text-sm font-medium text-moss"
+        className="mb-1.5 block text-sm font-medium text-charcoal"
       >
         {label}
       </label>
@@ -189,8 +189,8 @@ function Field({
 
 function inputClasses(hasError: boolean) {
   return [
-    "w-full rounded-xl border bg-white/60 px-4 py-2.75 text-[0.95rem] text-moss placeholder:text-moss-soft/50",
+    "w-full rounded-xl border bg-white/60 px-4 py-2.75 text-[0.95rem] text-charcoal placeholder:text-charcoal-soft/50",
     "transition focus:bg-white focus:outline-none",
-    hasError ? "border-[#c98a73]" : "border-sand-line focus:border-sage",
+    hasError ? "border-[#c98a73]" : "border-sand-line focus:border-clay",
   ].join(" ");
 }

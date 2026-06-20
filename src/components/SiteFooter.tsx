@@ -4,10 +4,10 @@ export default function SiteFooter() {
       <div className="mx-auto max-w-6xl px-6 py-12 sm:px-8">
         <div className="grid gap-10 sm:grid-cols-3">
           <div>
-            <p className="font-display text-lg text-moss">
+            <p className="font-display text-lg text-charcoal">
               Dr. Priya Agarwal
             </p>
-            <p className="mt-1 text-sm text-moss-soft">
+            <p className="mt-1 text-sm text-charcoal-soft">
               Ayurveda Physician, BAMS
               <br />
               GAMRC, Jaipur (Alumna)
@@ -16,7 +16,7 @@ export default function SiteFooter() {
 
           <div>
             <p className="eyebrow mb-3">Visit</p>
-            <p className="text-sm leading-relaxed text-moss-soft">
+            <p className="text-sm leading-relaxed text-charcoal-soft">
               Clinic address line one
               <br />
               Jaipur, Rajasthan, India
@@ -27,21 +27,21 @@ export default function SiteFooter() {
 
           <div>
             <p className="eyebrow mb-3">Reach Out</p>
-            <p className="text-sm leading-relaxed text-moss-soft">
+            <p className="text-sm leading-relaxed text-charcoal-soft">
               +91 00000 00000
               <br />
               hello@priyaagarwal.example
             </p>
             <a
               href="#contact"
-              className="mt-3 inline-block text-sm font-medium text-sage-deep underline decoration-sand-line decoration-2 underline-offset-4 transition hover:text-moss"
+              className="mt-3 inline-block text-sm font-medium text-clay-deep underline decoration-sand-line decoration-2 underline-offset-4 transition hover:text-charcoal"
             >
               Request a consultation →
             </a>
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-2 border-t border-sand-line pt-6 text-xs text-moss-soft/80 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 flex flex-col gap-2 border-t border-sand-line pt-6 text-xs text-charcoal-soft/80 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} Dr. Priya Agarwal. All rights
             reserved.
