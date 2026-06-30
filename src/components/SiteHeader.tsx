@@ -3,10 +3,11 @@
 import { useState } from "react";
 
 const NAV_LINKS = [
-  { href: "#about", label: "About" },
-  { href: "#practice", label: "Practice" },
-  { href: "#process", label: "Consultation Process" },
-  { href: "#contact", label: "Book a Visit" },
+  { href: "#quiz", label: "Dosha Quiz" },
+  { href: "#process", label: "How It Works" },
+  { href: "#practice", label: "Services" },
+  { href: "#reviews", label: "Reviews" },
+  { href: "#contact", label: "Book Online" },
 ];
 
 export default function SiteHeader() {
@@ -26,7 +27,7 @@ export default function SiteHeader() {
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">
-          {NAV_LINKS.slice(0, 3).map((link) => (
+          {NAV_LINKS.slice(0, 4).map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -40,7 +41,7 @@ export default function SiteHeader() {
             href="#contact"
             className="rounded-full bg-sage px-5 py-2.5 text-[0.85rem] font-medium tracking-wide text-ivory transition hover:bg-sage-deep"
           >
-            Book a Visit
+            Book Online
           </a>
         </nav>
 

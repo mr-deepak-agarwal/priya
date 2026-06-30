@@ -25,9 +25,9 @@ const inter = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Dr. Priya Agarwal | Ayurveda Physician, Jaipur",
+  title: "Dr. Priya Agarwal | Online Ayurveda Consultations, Jaipur",
   description:
-    "Personal Ayurveda consultations with Dr. Priya Agarwal, BAMS — Panchakarma, women's health & fertility, and whole-body care rooted in classical diagnosis. Based in Jaipur.",
+    "Book a personal video consultation with Dr. Priya Agarwal, BAMS — Ayurveda care for everyday wellness, Panchakarma detox, and women's health, available anywhere in India and abroad. In-clinic visits also available in Jaipur.",
 };
 
 export default function RootLayout({

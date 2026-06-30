@@ -5,7 +5,7 @@ import { useState, FormEvent } from "react";
 type Status = "idle" | "submitting" | "success" | "error";
 
 const CONCERNS = [
-  "General Ayurveda consultation",
+  "Online video consultation",
   "Panchakarma & detox",
   "Women's health & fertility",
   "Something else",
@@ -106,6 +106,33 @@ export default function ConsultationForm() {
           className={inputClasses(!!errors.email)}
         />
       </Field>
+
+      <fieldset>
+        <legend className="mb-2 block text-sm font-medium text-charcoal">
+          How would you like to consult?
+        </legend>
+        <div className="grid gap-2 sm:grid-cols-2">
+          <label className="flex cursor-pointer items-center gap-2.5 rounded-xl border border-sand-line bg-white/60 px-3.5 py-2.5 text-[0.9rem] text-charcoal-soft transition hover:border-sage has-[:checked]:border-sage has-[:checked]:bg-sage/10 has-[:checked]:text-charcoal">
+            <input
+              type="radio"
+              name="mode"
+              value="Video consultation"
+              defaultChecked
+              className="h-3.5 w-3.5 accent-[#1c4a2d]"
+            />
+            Video call — anywhere
+          </label>
+          <label className="flex cursor-pointer items-center gap-2.5 rounded-xl border border-sand-line bg-white/60 px-3.5 py-2.5 text-[0.9rem] text-charcoal-soft transition hover:border-sage has-[:checked]:border-sage has-[:checked]:bg-sage/10 has-[:checked]:text-charcoal">
+            <input
+              type="radio"
+              name="mode"
+              value="In-person — Jaipur clinic"
+              className="h-3.5 w-3.5 accent-[#1c4a2d]"
+            />
+            In-person — Jaipur clinic
+          </label>
+        </div>
+      </fieldset>
 
       <fieldset>
         <legend className="mb-2 block text-sm font-medium text-charcoal">

@@ -15,13 +15,13 @@ export default function SiteFooter() {
           </div>
 
           <div>
-            <p className="eyebrow mb-3">Visit</p>
+            <p className="eyebrow mb-3">Consult</p>
             <p className="text-sm leading-relaxed text-charcoal-soft">
-              Clinic address line one
+              Video — anywhere, any timezone
               <br />
-              Jaipur, Rajasthan, India
+              In-person — Jaipur, Rajasthan
               <br />
-              Mon–Sat · 10:00am – 6:00pm
+              Mon–Sat · 10:00am – 6:00pm IST
             </p>
           </div>
 
@@ -36,7 +36,7 @@ export default function SiteFooter() {
               href="#contact"
               className="mt-3 inline-block text-sm font-medium text-sage-deep underline decoration-sand-line decoration-2 underline-offset-4 transition hover:text-charcoal"
             >
-              Request a consultation →
+              Book a video consultation →
             </a>
           </div>
         </div>

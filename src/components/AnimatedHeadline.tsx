@@ -29,9 +29,9 @@ const word: Variants = {
  */
 export default function AnimatedHeadline() {
   const lines: { text: string; italic?: boolean }[][] = [
-    [{ text: "Healing" }, { text: "that" }, { text: "begins" }],
-    [{ text: "with" }, { text: "listening", italic: true }, { text: "—" }],
-    [{ text: "not" }, { text: "prescribing." }],
+    [{ text: "Ayurveda" }, { text: "care" }, { text: "that" }],
+    [{ text: "travels", italic: true }, { text: "—" }, { text: "wherever" }],
+    [{ text: "you" }, { text: "are." }],
   ];
 
   return (
